@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo Eros - O Eco das Estruturas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><i class="fas fa-book-open"></i> PROTOCOLO EROS</h1>
+                <h2>O Eco das Estruturas</h2>
+                <p class="subtitle">Reescreva a realidade do livro através de 5 lentes narrativas</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="game-intro">
+                <div class="rules">
+                    <h3><i class="fas fa-info-circle"></i> REGRAS DO JOGO</h3>
+                    <ol>
+                        <li><strong>Proibição da repetição:</strong> Cada contexto deve usar uma estrutura diferente</li>
+                        <li><strong>Crie 5 variações</strong> da semente narrativa abaixo</li>
+                        <li><strong>Use os conceitos</strong> do universo do livro</li>
+                        <li><strong>Complete todos os contextos</strong> para enviar sua contribuição</li>
+                    </ol>
+                </div>
+
+                <div class="score-display">
+                    <h3><i class="fas fa-star"></i> PONTUAÇÃO</h3>
+                    <div class="score-value">0</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text">Progresso: <span id="progressText">0/5</span></p>
+                </div>
+            </section>
+
+            <section class="seed-section">
+                <h3><i class="fas fa-seedling"></i> SEMEANDO A FRASE</h3>
+                <div class="seed-box">
+                    <div class="seed-text" id="seedText">
+                        "Se <span class="variable" contenteditable="true" data-var="x1">o amor</span> 
+                        é <span class="variable" contenteditable="true" data-var="y1">ruído</span>, 
+                        que <span class="variable" contenteditable="true" data-var="z1">o ruído</span> nos salve."
+                    </div>
+                    <button class="btn reset-btn" id="resetSeed">
+                        <i class="fas fa-redo"></i> Redefinir Semente
+                    </button>
+                </div>
+            </section>
+
+            <section class="tools-section">
+                <h3><i class="fas fa-tools"></i> SEU BANCO DE CONCEITOS</h3>
+                <div class="concepts-grid" id="conceptsGrid">
+                    <!-- Conceitos serão gerados via JavaScript -->
+                </div>
+            </section>
+
+            <section class="structures-section">
+                <h3><i class="fas fa-project-diagram"></i> ESTRUTURAS DISPONÍVEIS</h3>
+                <div class="structures-container">
+                    <div class="structure-card" data-id="1">
+                        <div class="structure-header">
+                            <span class="structure-number">1</span>
+                            <span class="structure-status"><i class="fas fa-check-circle"></i> Disponível</span>
+                        </div>
+                        <p class="structure-text">"Se [X] é [Y]..."</p>
+                        <button class="btn use-btn" data-id="1">Usar Esta Estrutura</button>
+                    </div>
+                    
+                    <div class="structure-card" data-id="2">
+                        <div class="structure-header">
+                            <span class="structure-number">2</span>
+                            <span class="structure-status"><i class="fas fa-check-circle"></i> Disponível</span>
+                        </div>
+                        <p class="structure-text">"Quando [X] se torna [Y]..."</p>
+                        <button class="btn use-btn" data-id="2">Usar Esta Estrutura</button>
+                    </div>
+                    
+                    <div class="structure-card" data-id="3">
+                        <div class="structure-header">
+                            <span class="structure-number">3</span>
+                            <span class="structure-status"><i class="fas fa-check-circle"></i> Disponível</span>
+                        </div>
+                        <p class="structure-text">"No momento em que [X] deixa de ser [Y]..."</p>
+                        <button class="btn use-btn" data-id="3">Usar Esta Estrutura</button>
+                    </div>
+                    
+                    <div class="structure-card" data-id="4">
+                        <div class="structure-header">
+                            <span class="structure-number">4</span>
+                            <span class="structure-status"><i class="fas fa-check-circle"></i> Disponível</span>
+                        </div>
+                        <p class="structure-text">"Embora [X] pareça [Y]..."</p>
+                        <button class="btn use-btn" data-id="4">Usar Esta Estrutura</button>
+                    </div>
+                    
+                    <div class="structure-card" data-id="5">
+                        <div class="structure-header">
+                            <span class="structure-number">5</span>
+                            <span class="structure-status"><i class="fas fa-check-circle"></i> Disponível</span>
+                        </div>
+                        <p class="structure-text">"Apesar de chamarem [X] de [Y]..."</p>
+                        <button class="btn use-btn" data-id="5">Usar Esta Estrutura</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contexts-section">
+                <h3><i class="fas fa-layer-group"></i> CONTEXTOS NARRATIVOS</h3>
+                <p class="section-subtitle">Complete todas as variações para enviar sua contribuição ao repositório</p>
+                
+                <div class="contexts-container" id="contextsContainer">
+                    <!-- Contextos serão gerados via JavaScript -->
+                </div>
+            </section>
+
+            <section class="actions-section">
+                <button class="btn submit-btn" id="submitGame" disabled>
+                    <i class="fas fa-paper-plane"></i> Enviar Para o Repositório
+                </button>
+                <button class="btn secondary-btn" id="generateSeed">
+                    <i class="fas fa-random"></i> Gerar Nova Semente Aleatória
+                </button>
+                <button class="btn secondary-btn" id="viewSubmissions">
+                    <i class="fas fa-database"></i> Ver Contribuições
+                </button>
+            </section>
+
+            <div class="modal" id="successModal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h2><i class="fas fa-trophy"></i> Contribuição Enviada!</h2>
+                    <div class="modal-body">
+                        <p>Sua variação foi adicionada ao repositório do Protocolo Eros.</p>
+                        <div class="score-breakdown">
+                            <h4>Pontuação Obtida:</h4>
+                            <ul>
+                                <li>Consistência temática: <span class="score-point">+10</span></li>
+                                <li>Originalidade: <span class="score-point">+15</span></li>
+                                <li>Uso não-repetitivo: <span class="score-point">+20</span></li>
+                                <li>Referências ao livro: <span class="score-point">+5</span></li>
+                                <li class="total-score">Total: <span id="modalScore">50</span> pontos</li>
+                            </ul>
+                        </div>
+                        <p class="unlock-text">Você desbloqueou: <strong>Fragmento do Diário de Eleus</strong></p>
+                        <div class="unlock-content">
+                            <blockquote>
+                                "Há um protocolo para o amor, mas não há protocolo para o eco que ele deixa quando parte. Talvez sejamos todos ruídos à espera de um ouvido que nos traduza em melodia."
+                            </blockquote>
+                        </div>
+                        <button class="btn modal-btn" id="playAgain">Jogar Novamente</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="submissionsModal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h2><i class="fas fa-database"></i> Contribuições Recentes</h2>
+                    <div class="modal-body">
+                        <div class="submissions-list" id="submissionsList">
+                            <!-- Submissões serão carregadas aqui -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Protocolo Eros - Jogo Interativo | Contribua no <a href="https://github.com" target="_blank">GitHub</a></p>
+            <p class="footer-quote">"O que é um livro senão um protocolo esperando por variações?"</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
